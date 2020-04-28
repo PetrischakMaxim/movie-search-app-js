@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie search app</title>
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Main styles -->
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="app">
+
+    <div class="app__wrapper">
+        <header class="app__header">
+            <div class="collapse bg-primary" id="navbarHeader">
+                <div class="container">
+                    <div class="row">
+                        <div id="nav" class="col-12">
+                            <h4 class="text-white">Game links</h4>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar navbar-dark bg-primary shadow-sm">
+                <div class="container d-flex justify-content-between">
+                    <a href="#" class="navbar-brand d-flex align-items-center">
+                        <strong>English for kids App</strong>
+                    </a>
+                    <button class="navbar-toggler text-white" type="button" data-toggle="collapse"
+                        data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <main class="app__main bg-light">
+            <div class="cards-list">
+                <div class="container">
+                    <div id="root" class="row justify-content-center align-content-start">
+
+                    </div>
+                    <div class="loader">
+                        <img src="./img/spinner.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class=" app__footer bg-info text-light p-2">
+        <div class="container">
+            <p class="text-center  m-0">
+                @Movie search app
+            </p>
+        </div>
+    </footer>
+    <template id="card-template">
+        <div class="mb-1 col-12 col-sm-6 col-md-4 col-lg-3" data-template="card">
+            <div class="card card--item m-1">
+                <figure class="card__wrapper">
+                    <img class="card__image img-fluid" src="#" alt="">
+                    <figcaption class=" card__text text-light">
+                        <p class="card__name card__name--eng" data-lang="eng"></p>
+                        <p class="card__name card__name--rus" data-lang="rus"></p>
+                    </figcaption>
+                </figure>
+                <button class="card__toggler"></button>
+                <audio preload="metadata" src="#"></audio>
+            </div>
+        </div>
+    </template>
+    <template id="card-category-template">
+        <div class="category mb-1 col-12 col-sm-6 col-md-4 col-lg-3" data-template="category">
+            <div class="card card--category  m-1">
+                <figure class="card__wrapper">
+                    <img class="card__image img-fluid" src="#" alt="">
+                    <figcaption class=" card__text text-light">
+                        <p class="card__name"></p>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </template>
+    <script src="./js/bundle.js"></script>
+</body>
+
+</html>
