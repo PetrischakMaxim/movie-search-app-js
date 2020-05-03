@@ -4,7 +4,7 @@ export default function sliderInit() {
   const glideSettings = {
     type: 'carousel',
     startAt: 0,
-    perView: 3,
+    perView: 4,
     autoplay: 5000,
     gap: 10,
     breakpoints: {

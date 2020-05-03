@@ -118,7 +118,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return sliderInit; });\n/* harmony import */ var _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @glidejs/glide */ \"./node_modules/@glidejs/glide/dist/glide.esm.js\");\n\nfunction sliderInit() {\n  var glideSettings = {\n    type: 'carousel',\n    startAt: 0,\n    perView: 3,\n    autoplay: 5000,\n    gap: 10,\n    breakpoints: {\n      768: {\n        perView: 2\n      },\n      568: {\n        perView: 1\n      }\n    }\n  };\n  new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('.glide', glideSettings).mount();\n}\n\n//# sourceURL=webpack:///./src/modules/glide.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return sliderInit; });\n/* harmony import */ var _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @glidejs/glide */ \"./node_modules/@glidejs/glide/dist/glide.esm.js\");\n\nfunction sliderInit() {\n  var glideSettings = {\n    type: 'carousel',\n    startAt: 0,\n    perView: 4,\n    autoplay: 5000,\n    gap: 10,\n    breakpoints: {\n      768: {\n        perView: 2\n      },\n      568: {\n        perView: 1\n      }\n    }\n  };\n  new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('.glide', glideSettings).mount();\n}\n\n//# sourceURL=webpack:///./src/modules/glide.js?");
 
 /***/ })
 
