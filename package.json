@@ -48,5 +48,8 @@
     "rules": {
       "no-console": 2
     }
+  },
+  "dependencies": {
+    "@glidejs/glide": "^3.4.1"
   }
 }

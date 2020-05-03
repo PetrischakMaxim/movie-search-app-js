@@ -6,6 +6,10 @@ $font: "Ubuntu", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
   box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
 }
 
+@mixin text-shadow() {
+  text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.14);
+}
+
 @mixin trs() {
   transition: all 0.3s cubic-bezier(0.53, 0.01, 0.36, 1.63) ;
 }
@@ -74,7 +78,8 @@ body {
   color: $accent;
   text-transform: capitalize;
   text-decoration: none;
-  text-shadow: 1px 2px 5px rgba(0,0,0,0.14);
+
+@include text-shadow();
 }
 
 .app {
@@ -102,11 +107,11 @@ body {
 
 /* Form */
 .search-form {
-  padding: 1rem;
-
   color: $primary;
 }
 .search-form__fieldset {
+  padding: 5px 0;
+
   font-weight: 500;
 
   border-color: transparent;
@@ -119,22 +124,20 @@ body {
 
 .search-form__field {
   width: 100%;
-  padding: 5px;
+  padding: 1rem;
 
   font: inherit;
-  color: $accent;
+  color: inherit;
 
-  background-color: $success;
-  border: solid $success;
+  background-color: $light;
+  border: 1px solid $success;
   border-radius: 5px;
   outline-color: transparent;
-
-@include shadow();
 
 @include trs();
 
   &::placeholder {
-    color: currentColor;
+    color: inherit;
   }
 
   &:focus {
@@ -169,7 +172,7 @@ body {
   text-decoration: none;
   letter-spacing: 0.5px;
 
-  background-color: $success;
+  background-color: $primary;
   border-color: transparent;
   border-radius: 50%;
   outline-color: transparent;
@@ -184,3 +187,85 @@ body {
 @include shadow();
   -webkit-tap-highlight-color: transparent;
 }
+
+/* Cards */
+.glide {
+  .glide__arrow {
+    top: 95%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font: inherit;
+    font-weight: 100;
+    font-size: 2rem;
+    color: $accent;
+    text-transform: none;
+
+    background-color: $success;
+    border-color: $success;
+    &:hover {
+      border-color: $primary;
+    }
+  }
+  .glide__arrow--left {
+    left: 0;
+  }
+  .glide__arrow--right {
+    right: 0;
+  }
+  .glide__bullets {
+    bottom: 0;
+  }
+  .glide__bullet {
+    background-color: $primary;
+  }
+  .glide__bullet--active {
+    background-color: $accent;
+  }
+}
+
+.card {
+  margin: 5px;
+  padding: 5px;
+
+  text-align: center;
+  color: $primary;
+
+  background-color: $light;
+  border-radius: 5px;
+
+@include shadow();
+}
+.card__name {
+  padding: 1rem 0;
+
+  font-weight: 500;
+
+@include text-shadow();
+}
+.card__descripion {
+  margin: 0 0 1rem;
+  padding: 0;
+}
+.card__image {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.card__rating {
+  display: inline-flex;
+  align-items: center;
+  margin: 1rem 0;
+
+  color: $warning;
+}
+.card__release {
+  margin: 1rem 0;
+}
+// Required Core Stylesheet
+@import "../../node_modules/@glidejs/glide/src/assets/sass/glide.core";
+
+// Optional Theme Stylesheet
+@import "../../node_modules/@glidejs/glide/src/assets/sass/glide.theme";
