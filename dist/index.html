@@ -8,6 +8,7 @@
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,100&display=swap"
         rel="stylesheet">
+          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Main styles -->
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -18,8 +19,8 @@
         <!-- Header -->
         <header class="app__header">
             <div class="container">
-                <a href="#" class="logo">
-                    MovieSearch
+                <a class="logo">
+                   <i class="material-icons ">movie</i> Movie Search
                 </a>
             </div>
         </header>
@@ -32,11 +33,15 @@
                         <legend class="search-form__title">
                             Find your movie!
                         </legend>
-                        <label for="search-field">
-                            <input id="search-field" type="search" class="serach-form__field" placeholder="Search movie"
-                                required>
-                        </label>
-                        <button id="submit-btn" class="search-form__submit-btn" type="submit">Search</button>
+                        <div class="search-form__wrapper">
+                            <label class="search-form__label"  for="search-field">
+                            <input id="search-field" type="search" class="search-form__field" placeholder="Search movie"
+                                required autocomplete="off">
+                            </label>
+                            <button id="submit-btn" class="search-form__submit-btn" type="submit">
+                                <i class="material-icons">search</i>
+                            </button>
+                        </div>
                     </fieldset>
                 </form>
             </div>
@@ -45,7 +50,7 @@
     <!-- End Main -->
     <!-- Footer -->
     <footer class=" app__footer">
-        <div class="container">
+        <div class="container flex-between">
             <p class="copyright">
                 @Movie search app
             </p>
