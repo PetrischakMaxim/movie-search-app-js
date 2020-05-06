@@ -9,6 +9,9 @@ export default class Slider {
     gap: 10,
     carousel: 'glide--carousel',
     breakpoints: {
+      1170: {
+        perView: 3,
+      },
       768: {
         perView: 2,
       },
