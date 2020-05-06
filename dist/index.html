@@ -1,134 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Movie search app</title>
-    <!-- Font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,100&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Main styles -->
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
 
-  <body class="app">
-    <div class="app__wrapper">
-      <!-- Header -->
-      <header class="app__header">
-        <div class="container">
-          <a class="logo">
-            <i class="material-icons ">movie</i> Movie Search
-          </a>
-        </div>
-      </header>
-      <!-- End Header -->
-      <!-- Main -->
-      <main class="app__main">
-        <div class="container">
-          <form action="#" class="search-form">
-            <fieldset class="search-form__fieldset">
-              <legend class="search-form__title">
-                Find your movie!
-              </legend>
-              <div class="search-form__wrapper">
-                <label class="search-form__label" for="search-field">
-                  <input
-                    id="search-field"
-                    type="search"
-                    class="search-form__field"
-                    placeholder="Search movie"
-                    required
-                    autocomplete="off"
-                  />
-                </label>
-                <button
-                  id="submit-btn"
-                  class="search-form__submit-btn"
-                  type="submit"
-                >
-                  <i class="material-icons">search</i>
-                </button>
-              </div>
-            </fieldset>
-          </form>
-          <!-- SLider -->
-          <div class="glide slider slider--hidden">
-            <div class="glide__track" data-glide-el="track">
-              <ul class="glide__slides">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie search app</title>
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,100&display=swap"
+    rel="stylesheet" />
+  <!-- Main styles -->
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
 
-              </ul>
-            </div>
-            <div class="glide__arrows" data-glide-el="controls">
-              <button
-                class="glide__arrow glide__arrow--left"
-                data-glide-dir="<"
-              >
-                <i class="material-icons">navigate_before</i>
-              </button>
-              <button
-                class="glide__arrow glide__arrow--right"
-                data-glide-dir=">"
-              >
-                <i class="material-icons">navigate_next</i>
-              </button>
-            </div>
-            <div class="glide__bullets" data-glide-el="controls[nav]">
-              <button class="glide__bullet" data-glide-dir="=0"></button>
-              <button class="glide__bullet" data-glide-dir="=1"></button>
-              <button class="glide__bullet" data-glide-dir="=2"></button>
-            </div>
-          </div>
-          <!-- End Slider -->
-        </div>
-      </main>
-    </div>
-    <!-- End Main -->
-    <!-- Footer -->
-    <footer class=" app__footer">
-      <div class="container flex-between">
-        <p class="copyright">
-          @Movie search app
-        </p>
-        <a
-          href="https://github.com/PetrischakMaxim"
-          target="_blank"
-          class="author"
-          title="PetrischakMaxim"
-          >PetrischakMaxim</a
-        >
+<body class="app">
+  <div class="app__wrapper">
+    <!-- Header -->
+    <header class="app__header">
+      <div class="container">
+        <a class="logo">
+          <i class="material-icons ">movie</i> Movie Search
+        </a>
       </div>
-    </footer>
-    <!-- End Footer -->
-    <!-- Card movie template -->
-    <template id="card">
-      <li class="glide__slide">
-        <div class="card">
-          <figure class="card__descripion">
-            <figcaption class="card__name">
-              Name
-            </figcaption>
-            <img
-              class="card__image"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRsDOXxa0VtApUoEOeNnPEUyyix3HiuG8D3wSK_wnh773xk7g6x&usqp=CAU"
-              alt=""
-            />
-          </figure>
-          <p class="card__release">
-            <b> Release date:</b> <span class="card__year">200</span>
-          </p>
-          <p class="card__rating">
-            <b>Rating IMDb:</b>
-            <i class="material-icons">star</i>
-            <span class="card__value">
-              8.9
-            </span>
+    </header>
+    <!-- End Header -->
+    <!-- Main -->
+    <main class="app__main">
+      <div class="container">
+        <form action="#" class="search-form">
+          <fieldset class="search-form__fieldset">
+            <legend class="search-form__title">
+              Find your movie!
+            </legend>
+            <div class="search-form__wrapper">
+              <label class="search-form__label" for="search-field">
+                <input id="search-field" type="search" class="search-form__field" placeholder="Search movie"
+                  autocomplete="off" pattern="[a-zA-Z0-9]+" title="Should only contain english letters" required />
+              </label>
+              <button id="submit-btn" class="search-form__submit-btn" type="submit">
+                <i class="material-icons">search</i>
+              </button>
+            </div>
+          </fieldset>
+        </form>
+        <!-- Preloader -->
+        <div class="error error--hidden">
+          <p class="error__text">
+            No result something wrong!
           </p>
         </div>
-      </li>
-    </template>
-    <!-- JavaScript -->
-    <script src="./js/bundle.js"></script>
-  </body>
+        <div class="loader">
+          <img src="./img/spinner.svg" alt="">
+        </div>
+        <!-- SLider -->
+        <div class="glide slider slider--hidden">
+          <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+            </ul>
+          </div>
+          <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+              <i class="material-icons">navigate_before</i>
+            </button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+              <i class="material-icons">navigate_next</i>
+            </button>
+          </div>
+        </div>
+        <!-- End Slider -->
+      </div>
+    </main>
+  </div>
+  <!-- End Main -->
+  <!-- Footer -->
+  <footer class=" app__footer">
+    <div class="container flex-between">
+      <p class="copyright">
+        @Movie search app
+      </p>
+      <a href="https://github.com/PetrischakMaxim" target="_blank" class="author"
+        title="PetrischakMaxim">PetrischakMaxim</a>
+    </div>
+  </footer>
+  <!-- End Footer -->
+  <!-- Card movie template -->
+  <template id="card">
+    <li class="glide__slide">
+      <div class="card">
+        <figure class="card__descripion">
+          <figcaption class="card__name">
+            Name
+          </figcaption>
+          <img class="card__image" alt="" />
+        </figure>
+        <p class="card__release">
+          <b> Release date:</b> <span class="card__year">200</span>
+        </p>
+        <p class="card__rating">
+          <b>Rating IMDb:</b>
+          <i class="material-icons">star</i>
+          <span class="card__value">
+            8.9
+          </span>
+        </p>
+      </div>
+    </li>
+  </template>
+  <!-- JavaScript -->
+  <script src="./js/bundle.js"></script>
+</body>
+
 </html>

@@ -1,12 +1,13 @@
 import Glide from '@glidejs/glide';
 
-export default function sliderInit() {
-  const glideSettings = {
+export default class Slider {
+  _glideSettings = {
     type: 'carousel',
     startAt: 0,
     perView: 4,
-    autoplay: 5000,
+    autoplay: false,
     gap: 10,
+    carousel: 'glide--carousel',
     breakpoints: {
       768: {
         perView: 2,
@@ -17,5 +18,13 @@ export default function sliderInit() {
     },
   };
 
-  new Glide('.glide', glideSettings).mount();
+  getSelector() {
+    return this._glideSettings.carousel;
+  }
+
+  _slider = new Glide('.glide', this._glideSettings);
+
+  init() {
+    this._slider.mount();
+  }
 }
